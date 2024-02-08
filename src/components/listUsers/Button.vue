@@ -1,12 +1,14 @@
 <script>
     export default {
-    props: ['fontTitile']}
+    props: ['fontTitile','disabled']}
 
     // console.log();
 </script>
 
 <template>
-    <button type="button" :class="fontTitile"><slot>{{ fontTitile }}</slot></button>
+    <button :disabled="disabled" type="button" :class="fontTitile">
+        <slot></slot>
+    </button>
 </template>
 
 <style scoped>

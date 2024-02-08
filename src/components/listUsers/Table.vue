@@ -1,26 +1,31 @@
-<script>
+<script setup>
     import { usersArray } from './listUsers';
+
+    defineProps({
+    sort: Boolean
+});
 
 // получим заголовки таблицы
 const titlesTable = [];
 for (const title in usersArray[0]){
     titlesTable.push(title);
+    // console.log(title);
 }
+
+
 </script>
 <template>
-        <!-- <p v-for="title in titlesTable" >
-            {{title}}
-        </p> -->
-        <table>
-            <caption><h2>Table of users</h2></caption>
-                <!-- -- Шапка таблицы --  -->
+    <table>
+        <caption><h2>Table of users</h2></caption>
             <thead>
-                <tr v-for="title in titlesTable" >
-                    {{title}}
+                <tr>
+                    <th v-for="title in titlesTable" :key="title">{{ title }}</th>
                 </tr>
             </thead>
-                <!-- Список пользователей -->
-                    <!-- {arrayUsers} -->
+            <tr v-for="user of usersArray">
+                <td v-for="title in titlesTable">{{ user[title] }}</td>
+            </tr>
+                    
         </table>
 </template>
 
@@ -33,7 +38,7 @@ width: 100%;
 
 td, th {
 border: 1px solid #dddddd;
-/* text-align: left; */
+text-align: left;
 white-space: nowrap;
 padding: 8px;
 }
