@@ -1,11 +1,5 @@
 <script setup>
-    import { usersArray } from './listUsers';
-
-    // получим заголовки таблицы
-    const titlesTable = [];
-    for (const title in usersArray[0]){
-        titlesTable.push(title);
-    }
+import Table from './Table.vue'
 
 </script>
 
@@ -13,8 +7,30 @@
     <div>
         <Button>Show users</Button>
         <Button>Sort A - Z</Button>
-        <p v-for="title in titlesTable" >
+        <!-- <p v-for="title in titlesTable" >
             {{title}}
-        </p>
+        </p> -->
+        <div>
+            <Table />
+        </div>
     </div>
 </template>
+
+<style>
+table {
+
+border-collapse: unset;
+width: 100%;
+}
+
+td, th {
+border: 1px solid #dddddd;
+/* text-align: left; */
+white-space: nowrap;
+padding: 8px;
+}
+
+tr:nth-child(even) {
+background-color: #dddddd;
+}
+</style>
