@@ -1,14 +1,14 @@
 <script setup>
 import PlusMinus from './components/plusMinus/PlusMinus.vue';
-
+import List from './components/listUsers/List.vue';
 // import HelloWorld from './components/HelloWorld.vue'
 // import Button from './components/Button.vue'
 </script>
 
 <template >
   <div>
-    <PlusMinus />
-    
+    <!-- <PlusMinus /> -->
+    <List />
   </div>
   <!-- <HelloWorld msg="Vite + Vue" /> -->
 </template>
